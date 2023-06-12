@@ -1,7 +1,8 @@
 package club
 
 import (
-    "fmt"
+	"fmt"
+	"pkg/utils"
 )
 
 var Header = []string{
@@ -45,8 +46,8 @@ func Cetak(A TabKlub) {
     // print contents
     for i = 0; i < A.N; i++ {
         fmt.Printf(
-            "| % d | % 4s | % 12d | % 10d | % 4d | % 9d | % 14d | % 14d | % 11d | % 4d |\n",
-            i+1,
+            "| % 2s | % 4s | % 12d | % 10d | % 4d | % 9d | % 14d | % 14d | % 11d | % 4d |\n",
+            utils.ToStr(i+1),
             A.Get[i].Nama,
             A.Get[i].Pertandingan,
             A.Get[i].Menang,
@@ -62,8 +63,8 @@ func Cetak(A TabKlub) {
     fmt.Println(separator)
 }
 
-func Ubah(A *TabKlub, nama string, k Klub) {
-    A.Get[CariKlub(*A, nama)] = k
+func Ubah(A *TabKlub, nama, namaBaru string) {
+    A.Get[CariKlub(*A, nama)].Nama = namaBaru
 }
 
 func Hapus(A *TabKlub, nama string) {
@@ -71,7 +72,7 @@ func Hapus(A *TabKlub, nama string) {
         A.Get[i] = A.Get[i+1]
     }
 
-    A.Get[A.N] = Klub{}
+    A.Get[A.N-1] = Klub{}
     A.N--
 }
 
@@ -85,7 +86,7 @@ func Sort(A *TabKlub) {
         b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
 
         for j > 0 && (b1 || b2) {
-            Swap(&A.Get[j], &A.Get[j-1])
+            SwapKlub(&A.Get[j], &A.Get[j-1])
             j--
 
             if j != 0 {
@@ -96,7 +97,7 @@ func Sort(A *TabKlub) {
     }
 }
 
-func Swap(c1, c2 *Klub) {
+func SwapKlub(c1, c2 *Klub) {
     tmp := *c1
     *c1 = *c2
     *c2 = tmp

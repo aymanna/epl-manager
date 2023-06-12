@@ -1,34 +1,27 @@
 package main
 
 import (
-    "fmt"
-    "pkg/utils"
-    "pkg/club"
-    "pkg/matches"
+	"fmt"
+	"pkg/club"
+	"pkg/matches"
+	"pkg/utils"
 )
-
-var PilihanMenu = []string{
-    "Tambah Data Klub Bola",
-    "Sunting Data Klub Bola",
-    "Hapus Data Klub Bola",
-    "Cetak Data Rangkin EPL",
-    "Keluar",
-}
 
 func main() {
     var p string
-    var TKlub = club.DummyData
+    var C = club.InitialData
+    var P = matches.InitialData
 
     for {
         utils.ClearScreen()
         PrintPrompt()
-        fmt.Print("Pilih [1/2/3/4/5]: ")
+        fmt.Print("Pilih [1/2/3]: ")
         fmt.Scan(&p)
 
         if p == "1" {
-            club.Menu(&TKlub)
-            } else if p == "2" {
-            matches.Menu()
+            club.Menu(&C)
+        } else if p == "2" {
+            matches.Menu(&P, &C)
         } else if p == "3" {
             break
         } else {
