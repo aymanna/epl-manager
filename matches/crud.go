@@ -70,7 +70,8 @@ func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
 }
 
 func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {
-    Ubah(P, C, week, order, 0, 0)
+    P[week-1][order-1].Gol1 = 0
+    P[week-1][order-1].Gol2 = 0
     P[week-1][order-1].HavePlayed = false
     UpdateRanking(C, *P)
 }
