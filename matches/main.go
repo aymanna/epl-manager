@@ -520,7 +520,27 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
             fmt.Print(utils.WaitForEnterPrompt)
             utils.WaitForEnter()
         } else if p1 == "2" {   // hapus
-            // TODO
+            fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
+            fmt.Scan(&week)
+
+            if week > 0 && week < WEEKMAX {
+                Cetak(*P, week)
+                fmt.Println()
+
+                fmt.Print("Masukkan nomor pertandingan: ")
+                fmt.Scan(&order)
+
+                if order < 1 && order > PERTANDINGANMAX {
+                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                } else {
+                    Hapus(P, C, week, order)
+                }
+            } else {
+                fmt.Println("Masukkan minggu pertandingan tidak valid.")
+            }
+
+            fmt.Print(utils.WaitForEnterPrompt)
+            utils.WaitForEnter()
         } else if p1 == "3" {   // tampil
             fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
             fmt.Scan(&week)
