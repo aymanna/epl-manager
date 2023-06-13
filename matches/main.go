@@ -10,11 +10,11 @@ const WEEKMAX int = 2 * (utils.CLUBMAX - 1)
 const PERTANDINGANMAX int = (utils.CLUBMAX / 2)
 
 type Pertandingan struct {
-    Nama1      string
-    Nama2      string
-    Gol1       int
-    Gol2       int
-    HavePlayed bool
+    Nama1     string
+    Nama2     string
+    Gol1      int
+    Gol2      int
+    SudahMain bool
 }
 
 type TabPertandingan [WEEKMAX][PERTANDINGANMAX]Pertandingan

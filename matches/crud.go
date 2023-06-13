@@ -43,7 +43,7 @@ func Cetak(P TabPertandingan, week int) {
     for i = 0; i < PERTANDINGANMAX; i++ {
         p := P[week-1][i]
 
-        if p.HavePlayed {
+        if p.SudahMain {
             havePlayed = "SUDAH"
         } else {
             havePlayed = ""    
@@ -65,14 +65,14 @@ func Cetak(P TabPertandingan, week int) {
 func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
     P[week-1][order-1].Gol1 = gol1
     P[week-1][order-1].Gol2 = gol2
-    P[week-1][order-1].HavePlayed = true
+    P[week-1][order-1].SudahMain = true
     UpdateRanking(C, *P)
 }
 
 func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {
     P[week-1][order-1].Gol1 = 0
     P[week-1][order-1].Gol2 = 0
-    P[week-1][order-1].HavePlayed = false
+    P[week-1][order-1].SudahMain = false
     UpdateRanking(C, *P)
 }
 
@@ -86,7 +86,7 @@ func UpdateRanking(C *club.TabKlub, P TabPertandingan) {
         for j = 0; j < PERTANDINGANMAX; j++ {
             p = P[i][j]
 
-            if p.HavePlayed {
+            if p.SudahMain {
                 idx1 = club.CariKlub(*C, p.Nama1)
                 idx2 = club.CariKlub(*C, p.Nama2)
 
