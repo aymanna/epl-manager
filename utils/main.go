@@ -32,11 +32,10 @@ func ToStr(n int) string {
 
 func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
     // assume that 1 <= week <= 2 * (CLUBMAX - 1)
-    var i, last, mid, loops int
-    ans := [CLUBMAX/2][2]int{}
-    indexes := [CLUBMAX]int{}
+    var i, last, loops int
+    var ans [CLUBMAX/2][2]int
+    var indexes [CLUBMAX]int
 
-    mid = CLUBMAX / 2
     loops = (week - 1) % (CLUBMAX - 1)
 
     // generate indexes
@@ -44,11 +43,7 @@ func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
         if week <= CLUBMAX - 1 {
             indexes[i] = i
         } else {
-            if i < mid {
-                indexes[i] = i * 2
-            } else {
-                indexes[i] = (i - mid) * 2 + 1
-            }
+            indexes[i] = CLUBMAX - 1 - i
         }
     }
 
@@ -57,7 +52,7 @@ func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
         loops--
         last = indexes[CLUBMAX-1]
 
-        for i = 0; i < CLUBMAX-2; i++ {
+        for i = 0; i < (CLUBMAX-1)-1; i++ {
             indexes[CLUBMAX-1-i] = indexes[(CLUBMAX-1-i)-1]
         }
 
