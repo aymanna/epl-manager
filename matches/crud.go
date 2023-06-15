@@ -95,6 +95,18 @@ func InisialisasiData(P *TabPertandingan, C club.TabKlub) {
     }
 }
 
+func CariPertandingan(P *TabPertandingan, nama1, nama2 string) (int, int) {
+    for i := 0; i < WEEKMAX; i++ {
+        for j := 0; j < PERTANDINGANMAX; j++ {
+            if P[i][j].Nama1 == nama1 && P[i][j].Nama2 == nama2 {
+                return i, j
+            }
+        }
+    }
+
+    return -1, -1
+}
+
 func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {
     P[week-1][order-1].Gol1 = 0
     P[week-1][order-1].Gol2 = 0
