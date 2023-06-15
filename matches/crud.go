@@ -69,7 +69,7 @@ func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
     UpdateRanking(C, *P)
 }
 
-func InitializeData(P *TabPertandingan, C club.TabKlub) {
+func InisialisasiData(P *TabPertandingan, C club.TabKlub) {
     for i := 0; i < WEEKMAX; i++ {
         r := utils.DoubleRoundRobin(i)
 

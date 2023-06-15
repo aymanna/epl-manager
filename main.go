@@ -13,7 +13,7 @@ func main() {
     var P matches.TabPertandingan
 
     C = club.InitialData
-    matches.InitializeData(&P, C)
+    matches.InisialisasiData(&P, C)
 
     for {
         utils.ClearScreen()
