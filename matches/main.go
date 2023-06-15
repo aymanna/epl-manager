@@ -20,7 +20,7 @@ type Pertandingan struct {
 type TabPertandingan [WEEKMAX][PERTANDINGANMAX]Pertandingan
 
 func Menu(P *TabPertandingan, C *club.TabKlub) {
-    var p1, p2 string
+    var p1, p2, nama1, nama2 string
     var week, order, gol1, gol2 int
 
     for {
@@ -85,7 +85,40 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                 utils.ValidateRepeat(&p2, "Hapus data pertandingan lagi? [Y/N]: ")
             }
         } else if p1 == "3" {   // cari
-            // TODO
+            for p2 != "n" && p2 != "N" {
+                fmt.Println("Club bola:")
+
+                for i := 0; i < C.N; i++ {
+                    fmt.Println(C.Get[i].Nama)
+                }
+
+                fmt.Print("Masukkan nama club bola (home): ")
+                fmt.Scan(&nama1)
+                
+                if club.CariKlub(*C, nama1) == -1 {
+                    fmt.Println("Club bola tidak dapat ditemukan.")
+                } else {
+                    fmt.Print("Masukkan nama club bola (away): ")
+                    fmt.Scan(&nama2)
+
+                    if club.CariKlub(*C, nama2) == -1 {
+                        fmt.Println("Club bola tidak dapat ditemukan.")
+                    } else {
+                        week, order = CariPertandingan(P, nama1, nama2)
+                        fmt.Printf(
+                            "Pertandingan %s (home) dengan %s (away) akan berlangsung pada:\n",
+                            nama1,
+                            nama2,
+                        )
+                        fmt.Printf("minggu ke-%d urutan %d.\n",
+                            week,
+                            order,
+                        )
+                    }
+                }
+
+                utils.ValidateRepeat(&p2, "Ubah data pertandingan lagi? [Y/N]: ")
+            }
         } else if p1 == "4" {   // tampil
             fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
             fmt.Scan(&week)
