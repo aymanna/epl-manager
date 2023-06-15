@@ -249,237 +249,237 @@ var InitialData = TabPertandingan{
         {"CRY", "CHE", 0, 0, false},
     },
     {
-        {"MCI", "SOU", 0, 0, false},
-        {"MUN", "LEI", 0, 0, false},
-        {"LIV", "NFO", 0, 0, false},
-        {"AVL", "WHU", 0, 0, false},
-        {"BRE", "CHE", 0, 0, false},
-        {"CRY", "FUL", 0, 0, false},
-        {"WOL", "TOT", 0, 0, false},
-        {"BOU", "BHA", 0, 0, false},
-        {"EVE", "NEW", 0, 0, false},
+        {"SOU", "MCI", 0, 0, false},
         {"LEE", "ARS", 0, 0, false},
+        {"LEI", "MUN", 0, 0, false},
+        {"EVE", "NEW", 0, 0, false},
+        {"NFO", "LIV", 0, 0, false},
+        {"BOU", "BHA", 0, 0, false},
+        {"WHU", "AVL", 0, 0, false},
+        {"WOL", "TOT", 0, 0, false},
+        {"CHE", "BRE", 0, 0, false},
+        {"CRY", "FUL", 0, 0, false},
     },
     {
-        {"MCI", "LEI", 0, 0, false},
-        {"SOU", "NFO", 0, 0, false},
-        {"MUN", "WHU", 0, 0, false},
-        {"LIV", "CHE", 0, 0, false},
-        {"AVL", "FUL", 0, 0, false},
-        {"BRE", "TOT", 0, 0, false},
-        {"CRY", "BHA", 0, 0, false},
-        {"WOL", "NEW", 0, 0, false},
-        {"BOU", "ARS", 0, 0, false},
-        {"EVE", "LEE", 0, 0, false},
-    },
-    {
-        {"MCI", "NFO", 0, 0, false},
-        {"LEI", "WHU", 0, 0, false},
-        {"SOU", "CHE", 0, 0, false},
-        {"MUN", "FUL", 0, 0, false},
-        {"LIV", "TOT", 0, 0, false},
-        {"AVL", "BHA", 0, 0, false},
-        {"BRE", "NEW", 0, 0, false},
-        {"CRY", "ARS", 0, 0, false},
-        {"WOL", "LEE", 0, 0, false},
-        {"BOU", "EVE", 0, 0, false},
-    },
-    {
-        {"MCI", "WHU", 0, 0, false},
-        {"NFO", "CHE", 0, 0, false},
-        {"LEI", "FUL", 0, 0, false},
-        {"SOU", "TOT", 0, 0, false},
-        {"MUN", "BHA", 0, 0, false},
-        {"LIV", "NEW", 0, 0, false},
-        {"AVL", "ARS", 0, 0, false},
-        {"BRE", "LEE", 0, 0, false},
-        {"CRY", "EVE", 0, 0, false},
-        {"WOL", "BOU", 0, 0, false},
-    },
-    {
-        {"MCI", "CHE", 0, 0, false},
-        {"WHU", "FUL", 0, 0, false},
-        {"NFO", "TOT", 0, 0, false},
-        {"LEI", "BHA", 0, 0, false},
-        {"SOU", "NEW", 0, 0, false},
-        {"MUN", "ARS", 0, 0, false},
-        {"LIV", "LEE", 0, 0, false},
-        {"AVL", "EVE", 0, 0, false},
-        {"BRE", "BOU", 0, 0, false},
-        {"CRY", "WOL", 0, 0, false},
-    },
-    {
-        {"MCI", "FUL", 0, 0, false},
-        {"CHE", "TOT", 0, 0, false},
-        {"WHU", "BHA", 0, 0, false},
-        {"NFO", "NEW", 0, 0, false},
-        {"LEI", "ARS", 0, 0, false},
-        {"SOU", "LEE", 0, 0, false},
-        {"MUN", "EVE", 0, 0, false},
-        {"LIV", "BOU", 0, 0, false},
-        {"AVL", "WOL", 0, 0, false},
-        {"BRE", "CRY", 0, 0, false},
-    },
-    {
-        {"MCI", "TOT", 0, 0, false},
-        {"FUL", "BHA", 0, 0, false},
-        {"CHE", "NEW", 0, 0, false},
-        {"WHU", "ARS", 0, 0, false},
-        {"NFO", "LEE", 0, 0, false},
-        {"LEI", "EVE", 0, 0, false},
-        {"SOU", "BOU", 0, 0, false},
-        {"MUN", "WOL", 0, 0, false},
-        {"LIV", "CRY", 0, 0, false},
-        {"AVL", "BRE", 0, 0, false},
-    },
-    {
-        {"MCI", "BHA", 0, 0, false},
-        {"TOT", "NEW", 0, 0, false},
-        {"FUL", "ARS", 0, 0, false},
-        {"CHE", "LEE", 0, 0, false},
-        {"WHU", "EVE", 0, 0, false},
-        {"NFO", "BOU", 0, 0, false},
-        {"LEI", "WOL", 0, 0, false},
-        {"SOU", "CRY", 0, 0, false},
-        {"MUN", "BRE", 0, 0, false},
-        {"LIV", "AVL", 0, 0, false},
-    },
-    {
-        {"MCI", "NEW", 0, 0, false},
-        {"BHA", "ARS", 0, 0, false},
-        {"TOT", "LEE", 0, 0, false},
-        {"FUL", "EVE", 0, 0, false},
-        {"CHE", "BOU", 0, 0, false},
-        {"WHU", "WOL", 0, 0, false},
-        {"NFO", "CRY", 0, 0, false},
-        {"LEI", "BRE", 0, 0, false},
-        {"SOU", "AVL", 0, 0, false},
-        {"MUN", "LIV", 0, 0, false},
-    },
-    {
-        {"MCI", "ARS", 0, 0, false},
-        {"NEW", "LEE", 0, 0, false},
-        {"BHA", "EVE", 0, 0, false},
-        {"TOT", "BOU", 0, 0, false},
-        {"FUL", "WOL", 0, 0, false},
-        {"CHE", "CRY", 0, 0, false},
-        {"WHU", "BRE", 0, 0, false},
-        {"NFO", "AVL", 0, 0, false},
-        {"LEI", "LIV", 0, 0, false},
-        {"SOU", "MUN", 0, 0, false},
-    },
-    {
-        {"MCI", "LEE", 0, 0, false},
-        {"ARS", "EVE", 0, 0, false},
-        {"NEW", "BOU", 0, 0, false},
-        {"BHA", "WOL", 0, 0, false},
-        {"TOT", "CRY", 0, 0, false},
-        {"FUL", "BRE", 0, 0, false},
-        {"CHE", "AVL", 0, 0, false},
-        {"WHU", "LIV", 0, 0, false},
-        {"NFO", "MUN", 0, 0, false},
-        {"LEI", "SOU", 0, 0, false},
-    },
-    {
-        {"MCI", "EVE", 0, 0, false},
-        {"LEE", "BOU", 0, 0, false},
-        {"ARS", "WOL", 0, 0, false},
-        {"NEW", "CRY", 0, 0, false},
-        {"BHA", "BRE", 0, 0, false},
-        {"TOT", "AVL", 0, 0, false},
-        {"FUL", "LIV", 0, 0, false},
-        {"CHE", "MUN", 0, 0, false},
-        {"WHU", "SOU", 0, 0, false},
-        {"NFO", "LEI", 0, 0, false},
-    },
-    {
-        {"MCI", "BOU", 0, 0, false},
-        {"EVE", "WOL", 0, 0, false},
-        {"LEE", "CRY", 0, 0, false},
-        {"ARS", "BRE", 0, 0, false},
-        {"NEW", "AVL", 0, 0, false},
-        {"BHA", "LIV", 0, 0, false},
-        {"TOT", "MUN", 0, 0, false},
-        {"FUL", "SOU", 0, 0, false},
-        {"CHE", "LEI", 0, 0, false},
-        {"WHU", "NFO", 0, 0, false},
-    },
-    {
-        {"MCI", "WOL", 0, 0, false},
-        {"BOU", "CRY", 0, 0, false},
-        {"EVE", "BRE", 0, 0, false},
-        {"LEE", "AVL", 0, 0, false},
-        {"ARS", "LIV", 0, 0, false},
-        {"NEW", "MUN", 0, 0, false},
-        {"BHA", "SOU", 0, 0, false},
-        {"TOT", "LEI", 0, 0, false},
-        {"FUL", "NFO", 0, 0, false},
-        {"CHE", "WHU", 0, 0, false},
-    },
-    {
-        {"MCI", "CRY", 0, 0, false},
-        {"WOL", "BRE", 0, 0, false},
-        {"BOU", "AVL", 0, 0, false},
-        {"EVE", "LIV", 0, 0, false},
-        {"LEE", "MUN", 0, 0, false},
-        {"ARS", "SOU", 0, 0, false},
-        {"NEW", "LEI", 0, 0, false},
-        {"BHA", "NFO", 0, 0, false},
-        {"TOT", "WHU", 0, 0, false},
-        {"FUL", "CHE", 0, 0, false},
-    },
-    {
-        {"MCI", "BRE", 0, 0, false},
-        {"CRY", "AVL", 0, 0, false},
-        {"WOL", "LIV", 0, 0, false},
-        {"BOU", "MUN", 0, 0, false},
-        {"EVE", "SOU", 0, 0, false},
-        {"LEE", "LEI", 0, 0, false},
-        {"ARS", "NFO", 0, 0, false},
-        {"NEW", "WHU", 0, 0, false},
-        {"BHA", "CHE", 0, 0, false},
-        {"TOT", "FUL", 0, 0, false},
-    },
-    {
-        {"MCI", "AVL", 0, 0, false},
-        {"BRE", "LIV", 0, 0, false},
-        {"CRY", "MUN", 0, 0, false},
-        {"WOL", "SOU", 0, 0, false},
-        {"BOU", "LEI", 0, 0, false},
-        {"EVE", "NFO", 0, 0, false},
-        {"LEE", "WHU", 0, 0, false},
-        {"ARS", "CHE", 0, 0, false},
-        {"NEW", "FUL", 0, 0, false},
-        {"BHA", "TOT", 0, 0, false},
-    },
-    {
-        {"MCI", "LIV", 0, 0, false},
-        {"AVL", "MUN", 0, 0, false},
-        {"BRE", "SOU", 0, 0, false},
-        {"CRY", "LEI", 0, 0, false},
-        {"WOL", "NFO", 0, 0, false},
-        {"BOU", "WHU", 0, 0, false},
-        {"EVE", "CHE", 0, 0, false},
-        {"LEE", "FUL", 0, 0, false},
-        {"ARS", "TOT", 0, 0, false},
-        {"NEW", "BHA", 0, 0, false},
-    },
-    {
+        {"SOU", "ARS", 0, 0, false},
         {"MCI", "MUN", 0, 0, false},
-        {"LIV", "SOU", 0, 0, false},
-        {"AVL", "LEI", 0, 0, false},
-        {"BRE", "NFO", 0, 0, false},
-        {"CRY", "WHU", 0, 0, false},
-        {"WOL", "CHE", 0, 0, false},
-        {"BOU", "FUL", 0, 0, false},
-        {"EVE", "TOT", 0, 0, false},
-        {"LEE", "BHA", 0, 0, false},
+        {"LEE", "NEW", 0, 0, false},
+        {"LEI", "LIV", 0, 0, false},
+        {"EVE", "BHA", 0, 0, false},
+        {"NFO", "AVL", 0, 0, false},
+        {"BOU", "TOT", 0, 0, false},
+        {"WHU", "BRE", 0, 0, false},
+        {"WOL", "FUL", 0, 0, false},
+        {"CHE", "CRY", 0, 0, false},
+    },
+    {
+        {"SOU", "MUN", 0, 0, false},
         {"ARS", "NEW", 0, 0, false},
-    },       
+        {"MCI", "LIV", 0, 0, false},
+        {"LEE", "BHA", 0, 0, false},
+        {"LEI", "AVL", 0, 0, false},
+        {"EVE", "TOT", 0, 0, false},
+        {"NFO", "BRE", 0, 0, false},
+        {"BOU", "FUL", 0, 0, false},
+        {"WHU", "CRY", 0, 0, false},
+        {"WOL", "CHE", 0, 0, false},
+    },
+    {
+        {"SOU", "NEW", 0, 0, false},
+        {"MUN", "LIV", 0, 0, false},
+        {"ARS", "BHA", 0, 0, false},
+        {"MCI", "AVL", 0, 0, false},
+        {"LEE", "TOT", 0, 0, false},
+        {"LEI", "BRE", 0, 0, false},
+        {"EVE", "FUL", 0, 0, false},
+        {"NFO", "CRY", 0, 0, false},
+        {"BOU", "CHE", 0, 0, false},
+        {"WHU", "WOL", 0, 0, false},
+    },
+    {
+        {"SOU", "LIV", 0, 0, false},
+        {"NEW", "BHA", 0, 0, false},
+        {"MUN", "AVL", 0, 0, false},
+        {"ARS", "TOT", 0, 0, false},
+        {"MCI", "BRE", 0, 0, false},
+        {"LEE", "FUL", 0, 0, false},
+        {"LEI", "CRY", 0, 0, false},
+        {"EVE", "CHE", 0, 0, false},
+        {"NFO", "WOL", 0, 0, false},
+        {"BOU", "WHU", 0, 0, false},
+    },
+    {
+        {"SOU", "BHA", 0, 0, false},
+        {"LIV", "AVL", 0, 0, false},
+        {"NEW", "TOT", 0, 0, false},
+        {"MUN", "BRE", 0, 0, false},
+        {"ARS", "FUL", 0, 0, false},
+        {"MCI", "CRY", 0, 0, false},
+        {"LEE", "CHE", 0, 0, false},
+        {"LEI", "WOL", 0, 0, false},
+        {"EVE", "WHU", 0, 0, false},
+        {"NFO", "BOU", 0, 0, false},
+    },
+    {
+        {"SOU", "AVL", 0, 0, false},
+        {"BHA", "TOT", 0, 0, false},
+        {"LIV", "BRE", 0, 0, false},
+        {"NEW", "FUL", 0, 0, false},
+        {"MUN", "CRY", 0, 0, false},
+        {"ARS", "CHE", 0, 0, false},
+        {"MCI", "WOL", 0, 0, false},
+        {"LEE", "WHU", 0, 0, false},
+        {"LEI", "BOU", 0, 0, false},
+        {"EVE", "NFO", 0, 0, false},
+    },
+    {
+        {"SOU", "TOT", 0, 0, false},
+        {"AVL", "BRE", 0, 0, false},
+        {"BHA", "FUL", 0, 0, false},
+        {"LIV", "CRY", 0, 0, false},
+        {"NEW", "CHE", 0, 0, false},
+        {"MUN", "WOL", 0, 0, false},
+        {"ARS", "WHU", 0, 0, false},
+        {"MCI", "BOU", 0, 0, false},
+        {"LEE", "NFO", 0, 0, false},
+        {"LEI", "EVE", 0, 0, false},
+    },
+    {
+        {"SOU", "BRE", 0, 0, false},
+        {"TOT", "FUL", 0, 0, false},
+        {"AVL", "CRY", 0, 0, false},
+        {"BHA", "CHE", 0, 0, false},
+        {"LIV", "WOL", 0, 0, false},
+        {"NEW", "WHU", 0, 0, false},
+        {"MUN", "BOU", 0, 0, false},
+        {"ARS", "NFO", 0, 0, false},
+        {"MCI", "EVE", 0, 0, false},
+        {"LEE", "LEI", 0, 0, false},
+    },
+    {
+        {"SOU", "FUL", 0, 0, false},
+        {"BRE", "CRY", 0, 0, false},
+        {"TOT", "CHE", 0, 0, false},
+        {"AVL", "WOL", 0, 0, false},
+        {"BHA", "WHU", 0, 0, false},
+        {"LIV", "BOU", 0, 0, false},
+        {"NEW", "NFO", 0, 0, false},
+        {"MUN", "EVE", 0, 0, false},
+        {"ARS", "LEI", 0, 0, false},
+        {"MCI", "LEE", 0, 0, false},
+    },
+    {
+        {"SOU", "CRY", 0, 0, false},
+        {"FUL", "CHE", 0, 0, false},
+        {"BRE", "WOL", 0, 0, false},
+        {"TOT", "WHU", 0, 0, false},
+        {"AVL", "BOU", 0, 0, false},
+        {"BHA", "NFO", 0, 0, false},
+        {"LIV", "EVE", 0, 0, false},
+        {"NEW", "LEI", 0, 0, false},
+        {"MUN", "LEE", 0, 0, false},
+        {"ARS", "MCI", 0, 0, false},
+    },
+    {
+        {"SOU", "CHE", 0, 0, false},
+        {"CRY", "WOL", 0, 0, false},
+        {"FUL", "WHU", 0, 0, false},
+        {"BRE", "BOU", 0, 0, false},
+        {"TOT", "NFO", 0, 0, false},
+        {"AVL", "EVE", 0, 0, false},
+        {"BHA", "LEI", 0, 0, false},
+        {"LIV", "LEE", 0, 0, false},
+        {"NEW", "MCI", 0, 0, false},
+        {"MUN", "ARS", 0, 0, false},
+    },
+    {
+        {"SOU", "WOL", 0, 0, false},
+        {"CHE", "WHU", 0, 0, false},
+        {"CRY", "BOU", 0, 0, false},
+        {"FUL", "NFO", 0, 0, false},
+        {"BRE", "EVE", 0, 0, false},
+        {"TOT", "LEI", 0, 0, false},
+        {"AVL", "LEE", 0, 0, false},
+        {"BHA", "MCI", 0, 0, false},
+        {"LIV", "ARS", 0, 0, false},
+        {"NEW", "MUN", 0, 0, false},
+    },
+    {
+        {"SOU", "WHU", 0, 0, false},
+        {"WOL", "BOU", 0, 0, false},
+        {"CHE", "NFO", 0, 0, false},
+        {"CRY", "EVE", 0, 0, false},
+        {"FUL", "LEI", 0, 0, false},
+        {"BRE", "LEE", 0, 0, false},
+        {"TOT", "MCI", 0, 0, false},
+        {"AVL", "ARS", 0, 0, false},
+        {"BHA", "MUN", 0, 0, false},
+        {"LIV", "NEW", 0, 0, false},
+    },
+    {
+        {"SOU", "BOU", 0, 0, false},
+        {"WHU", "NFO", 0, 0, false},
+        {"WOL", "EVE", 0, 0, false},
+        {"CHE", "LEI", 0, 0, false},
+        {"CRY", "LEE", 0, 0, false},
+        {"FUL", "MCI", 0, 0, false},
+        {"BRE", "ARS", 0, 0, false},
+        {"TOT", "MUN", 0, 0, false},
+        {"AVL", "NEW", 0, 0, false},
+        {"BHA", "LIV", 0, 0, false},
+    },
+    {
+        {"SOU", "NFO", 0, 0, false},
+        {"BOU", "EVE", 0, 0, false},
+        {"WHU", "LEI", 0, 0, false},
+        {"WOL", "LEE", 0, 0, false},
+        {"CHE", "MCI", 0, 0, false},
+        {"CRY", "ARS", 0, 0, false},
+        {"FUL", "MUN", 0, 0, false},
+        {"BRE", "NEW", 0, 0, false},
+        {"TOT", "LIV", 0, 0, false},
+        {"AVL", "BHA", 0, 0, false},
+    },
+    {
+        {"SOU", "EVE", 0, 0, false},
+        {"NFO", "LEI", 0, 0, false},
+        {"BOU", "LEE", 0, 0, false},
+        {"WHU", "MCI", 0, 0, false},
+        {"WOL", "ARS", 0, 0, false},
+        {"CHE", "MUN", 0, 0, false},
+        {"CRY", "NEW", 0, 0, false},
+        {"FUL", "LIV", 0, 0, false},
+        {"BRE", "BHA", 0, 0, false},
+        {"TOT", "AVL", 0, 0, false},
+    },
+    {
+        {"SOU", "LEI", 0, 0, false},
+        {"EVE", "LEE", 0, 0, false},
+        {"NFO", "MCI", 0, 0, false},
+        {"BOU", "ARS", 0, 0, false},
+        {"WHU", "MUN", 0, 0, false},
+        {"WOL", "NEW", 0, 0, false},
+        {"CHE", "LIV", 0, 0, false},
+        {"CRY", "BHA", 0, 0, false},
+        {"FUL", "AVL", 0, 0, false},
+        {"BRE", "TOT", 0, 0, false},
+    },
+    {
+        {"SOU", "LEE", 0, 0, false},
+        {"LEI", "MCI", 0, 0, false},
+        {"EVE", "ARS", 0, 0, false},
+        {"NFO", "MUN", 0, 0, false},
+        {"BOU", "NEW", 0, 0, false},
+        {"WHU", "LIV", 0, 0, false},
+        {"WOL", "BHA", 0, 0, false},
+        {"CHE", "AVL", 0, 0, false},
+        {"CRY", "TOT", 0, 0, false},
+        {"FUL", "BRE", 0, 0, false},
+    },    
 }
 
 func Menu(P *TabPertandingan, C *club.TabKlub) {
-    var p1 string
+    var p1, p2 string
     var week, order, gol1, gol2 int
 
     for {
@@ -489,58 +489,60 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
         fmt.Scan(&p1)
 
         if p1 == "1" {          // ubah
-            fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
-            fmt.Scan(&week)
+            for p2 != "n" && p2 != "N" {
+                fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
+                fmt.Scan(&week)
 
-            if week >= 1 && week <= WEEKMAX {
-                Cetak(*P, week)
-                fmt.Println()
+                if week >= 1 && week <= WEEKMAX {
+                    Cetak(*P, week)
+                    fmt.Println()
 
-                fmt.Print("Masukkan nomor pertandingan: ")
-                fmt.Scan(&order)
+                    fmt.Print("Masukkan nomor pertandingan: ")
+                    fmt.Scan(&order)
 
-                if order < 1 && order > PERTANDINGANMAX {
-                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
-                } else {
-                    fmt.Print("Masukkan banyak gol (home): ")
-                    fmt.Scan(&gol1)
-                    fmt.Print("Masukkan banyak gol (away): ")
-                    fmt.Scan(&gol2)
-
-                    if gol1 < 0 || gol2 < 0 {
-                        fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                    if order < 1 && order > PERTANDINGANMAX {
+                        fmt.Println("Masukkan minggu pertandingan tidak valid.")
                     } else {
-                        Ubah(P, C, week, order, gol1, gol2)
+                        fmt.Print("Masukkan banyak gol (home): ")
+                        fmt.Scan(&gol1)
+                        fmt.Print("Masukkan banyak gol (away): ")
+                        fmt.Scan(&gol2)
+
+                        if gol1 < 0 || gol2 < 0 {
+                            fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                        } else {
+                            Ubah(P, C, week, order, gol1, gol2)
+                        }
                     }
-                }
-            } else {
-                fmt.Println("Masukkan minggu pertandingan tidak valid.")
-            }
-
-            fmt.Print(utils.WaitForEnterPrompt)
-            utils.WaitForEnter()
-        } else if p1 == "2" {   // hapus
-            fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
-            fmt.Scan(&week)
-
-            if week > 0 && week < WEEKMAX {
-                Cetak(*P, week)
-                fmt.Println()
-
-                fmt.Print("Masukkan nomor pertandingan: ")
-                fmt.Scan(&order)
-
-                if order < 1 && order > PERTANDINGANMAX {
-                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
                 } else {
-                    Hapus(P, C, week, order)
+                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
                 }
-            } else {
-                fmt.Println("Masukkan minggu pertandingan tidak valid.")
-            }
 
-            fmt.Print(utils.WaitForEnterPrompt)
-            utils.WaitForEnter()
+                utils.ValidateRepeat(&p2, "Ubah data pertandingan lagi? [Y/N]: ")
+            }
+        } else if p1 == "2" {   // hapus
+            for p2 != "n" && p2 != "N" {
+                fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
+                fmt.Scan(&week)
+
+                if week > 0 && week < WEEKMAX {
+                    Cetak(*P, week)
+                    fmt.Println()
+
+                    fmt.Print("Masukkan nomor pertandingan: ")
+                    fmt.Scan(&order)
+
+                    if order < 1 && order > PERTANDINGANMAX {
+                        fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                    } else {
+                        Hapus(P, C, week, order)
+                    }
+                } else {
+                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                }
+
+                utils.ValidateRepeat(&p2, "Hapus data pertandingan lagi? [Y/N]: ")
+            }
         } else if p1 == "3" {   // tampil
             fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
             fmt.Scan(&week)
