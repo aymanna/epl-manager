@@ -69,6 +69,20 @@ func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
     UpdateRanking(C, *P)
 }
 
+func InitializeData(P *TabPertandingan, C club.TabKlub) {
+    for i := 0; i < WEEKMAX; i++ {
+        r := utils.DoubleRoundRobin(i)
+
+        for j := 0; j < PERTANDINGANMAX; j++ {
+            P[i][j].Nama1 = C.Get[r[j][0]].Nama
+            P[i][j].Nama2 = C.Get[r[j][1]].Nama
+            P[i][j].Gol1 = 0
+            P[i][j].Gol2 = 0
+            P[i][j].SudahMain = false
+        }
+    }
+}
+
 func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {
     P[week-1][order-1].Gol1 = 0
     P[week-1][order-1].Gol2 = 0

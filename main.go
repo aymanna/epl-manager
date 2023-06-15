@@ -9,8 +9,11 @@ import (
 
 func main() {
     var p string
-    var C = club.InitialData
-    var P = matches.InitialData
+    var C club.TabKlub
+    var P matches.TabPertandingan
+
+    C = club.InitialData
+    matches.InitializeData(&P, C)
 
     for {
         utils.ClearScreen()
