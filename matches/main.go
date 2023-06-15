@@ -569,7 +569,7 @@ func PrintPrompt() {
     fmt.Println("=================================")
     fmt.Println("     P E R T A N D I N G A N     ")
     fmt.Println("---------------------------------")
-    fmt.Println(" 1. Ubah Data Pertandingan       ")
+    fmt.Println(" 1. Input Data Pertandingan      ")
     fmt.Println(" 2. Hapus Data Pertandingan      ")
     fmt.Println(" 3. Tampil Data Pertandingan     ")
     fmt.Println(" 4. Kembali ke Menu Utama        ")
