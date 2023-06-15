@@ -95,16 +95,26 @@ func InisialisasiData(P *TabPertandingan, C club.TabKlub) {
     }
 }
 
-func CariPertandingan(P *TabPertandingan, nama1, nama2 string) (int, int) {
+func CariPertandingan(P *TabPertandingan, nama1, nama2 string) [2][2]int {
+    var ans [2][2]int
+
+    foundFirstMatch := false
+
     for i := 0; i < WEEKMAX; i++ {
         for j := 0; j < PERTANDINGANMAX; j++ {
             if P[i][j].Nama1 == nama1 && P[i][j].Nama2 == nama2 {
-                return i, j
+                if !foundFirstMatch {
+                    ans[0][0] = i
+                    ans[0][1] = j
+                } else {
+                    ans[1][0] = i
+                    ans[1][1] = j
+                }
             }
         }
     }
 
-    return -1, -1
+    return ans
 }
 
 func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {

@@ -84,7 +84,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
 
                 utils.ValidateRepeat(&p2, "Hapus data pertandingan lagi? [Y/N]: ")
             }
-        } else if p1 == "3" {
+        } else if p1 == "3" {   // cari
             // TODO
         } else if p1 == "4" {   // tampil
             fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
