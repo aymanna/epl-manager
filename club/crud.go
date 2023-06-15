@@ -63,8 +63,8 @@ func Cetak(A TabKlub) {
     fmt.Println(separator)
 }
 
-func Ubah(A *TabKlub, nama, namaBaru string) {
-    A.Get[CariKlub(*A, nama)].Nama = namaBaru
+func Ubah(A *TabKlub, namaLama, namaBaru string) {
+    A.Get[CariKlub(*A, namaLama)].Nama = namaBaru
 }
 
 func Hapus(A *TabKlub, nama string) {
