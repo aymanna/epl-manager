@@ -94,7 +94,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
 
                 fmt.Print("Masukkan nama club bola (home): ")
                 fmt.Scan(&nama1)
-                
+
                 if club.CariKlub(*C, nama1) == -1 {
                     fmt.Println("Club bola tidak dapat ditemukan.")
                 } else {

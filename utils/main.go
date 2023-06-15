@@ -40,11 +40,7 @@ func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
 
     // generate indexes
     for i = 0; i < CLUBMAX; i++ {
-        if week <= CLUBMAX - 1 {
-            indexes[i] = i
-        } else {
-            indexes[i] = CLUBMAX - 1 - i
-        }
+        indexes[i] = i
     }
 
     // reorder the indexes based on the match week
@@ -61,7 +57,11 @@ func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
 
     // insert index of matches
     for i = 0; i < CLUBMAX/2; i++ {
-        ans[i] = [2]int{indexes[i], indexes[CLUBMAX-1-i]}
+        if week <= CLUBMAX - 1 {
+            ans[i] = [2]int{indexes[i], indexes[CLUBMAX-1-i]}
+        } else {
+            ans[i] = [2]int{indexes[CLUBMAX-1-i], indexes[i]}
+        }
     }
 
     return ans
