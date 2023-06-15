@@ -69,6 +69,18 @@ func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
     UpdateRanking(C, *P)
 }
 
+func UbahNama(P *TabPertandingan, namaLama, namaBaru string) {
+    for i := 0; i < WEEKMAX; i++ {
+        for j := 0; j < PERTANDINGANMAX; j++ {
+            if P[i][j].Nama1 == namaLama {
+                P[i][j].Nama1 = namaBaru
+            } else if P[i][j].Nama2 == namaLama {
+                P[i][j].Nama2 = namaBaru
+            }
+        }
+    }
+}
+
 func InisialisasiData(P *TabPertandingan, C club.TabKlub) {
     for i := 0; i < WEEKMAX; i++ {
         r := utils.DoubleRoundRobin(i)
