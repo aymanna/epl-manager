@@ -50,7 +50,6 @@ var InitialData = TabKlub{
 
 func Menu(A *TabKlub) {
     var p1, p2, nama, namaBaru string
-    var idx int
 
     for {
         utils.ClearScreen()
@@ -73,20 +72,22 @@ func Menu(A *TabKlub) {
                 fmt.Print("Masukkan nama klub bola yang ingin di ubah: ")
                 fmt.Scan(&nama)
 
-                idx = CariKlub(*A, nama)
-
-                if idx != -1 {
+                if CariKlub(*A, nama) == -1 {
+                    fmt.Println("Nama klub bola tidak dapat ditemukan.")
+                } else {
                     fmt.Print("Masukkan nama klub baru: ")
                     fmt.Scan(&namaBaru)
 
                     if len(namaBaru) == 3 {
+                        if CariKlub(*A, namaBaru) != -1 {
+                            fmt.Println("Nama klub bola sudah ada.")
+                        }
+
                         Ubah(A, nama, namaBaru)
+                        // TODO: configure rename for the array of TabPertandingan
                     } else {
                         fmt.Println("panjang nama bola tidak sesuai (harus 3 huruf).")
                     }
-
-                } else {
-                    fmt.Println("Nama klub bola tidak dapat ditemukan.")
                 }
 
                 utils.ValidateRepeat(&p2, "Ubah data klub bola lagi? [Y/N]: ")
