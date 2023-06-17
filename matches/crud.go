@@ -159,6 +159,8 @@ func UpdateRanking(C *club.TabKlub, P TabPertandingan) {
     var i, j, idx1, idx2 int
     var p Pertandingan
 
+    club.Drop(C)
+
     for i = 0; i < WEEKMAX; i++ {
         for j = 0; j < PERTANDINGANMAX; j++ {
             p = P[i][j]

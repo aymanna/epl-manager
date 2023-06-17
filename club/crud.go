@@ -138,3 +138,16 @@ func CariKlub(A TabKlub, nama string) int {
 
     return -1
 }
+
+func Drop(A *TabKlub) {
+    for i := 0; i < A.N; i++ {
+        A.Get[i].Pertandingan = 0
+        A.Get[i].Menang = 0
+        A.Get[i].Seri = 0
+        A.Get[i].Kalah = 0
+        A.Get[i].Memasukkan = 0
+        A.Get[i].Kemasukkan = 0
+        A.Get[i].Selisih = 0
+        A.Get[i].Poin = 0
+    }
+}
