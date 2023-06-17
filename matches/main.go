@@ -126,7 +126,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                 utils.ValidateRepeat(&p2, "Ubah data pertandingan lagi? [Y/N]: ")
             }
         } else if p1 == "4" {   // tampil
-            utils.ValidateRepeat(&p2, "Tampil Semuanya? [Y/N]: ")
+            utils.ValidateRepeat(&p2, "Tampilkan pertandingan dengan skor? [Y/N]: ")
 
             if p2 == "Y" || p2 == "y" {
                 Cetak(*P)
