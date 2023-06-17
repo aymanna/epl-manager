@@ -6,7 +6,7 @@ import (
 
 const WrongInputPrompt = "Pilihan anda salah, silahkan input lagi."
 const WaitForEnterPrompt = "\nTekan Enter untuk lanjut..."
-const CLUBMAX int = 20
+const CLUBMAX int = 20  // must be in even value
 
 func ValidateRepeat(p *string, repeatPrompt string) {
     *p = ""
