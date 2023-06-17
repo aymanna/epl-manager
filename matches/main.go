@@ -113,11 +113,9 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                         } else {
                             week, order = CariPertandingan(*P, nama1, nama2)
                             fmt.Printf(
-                                "Pertandingan %s (home) dengan %s (away) akan berlangsung pada:\n",
+                                "Pertandingan %s (home) dengan %s (away) akan berlangsung pada minggu ke-%d dengan urutan pertandingan ke-%d.\n",
                                 nama1,
                                 nama2,
-                            )
-                            fmt.Printf("Minggu ke-%d dengan urutan pertandingan ke-%d.\n",
                                 week + 1,
                                 order + 1,
                             )
