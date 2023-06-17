@@ -12,8 +12,11 @@ func main() {
     var C club.TabKlub
     var P matches.TabPertandingan
 
-    C = club.InitialData
-    matches.InisialisasiData(&P, C)
+    utils.ValidateRepeat(&p, "Ingin menggunakan nama-nama club tersedia? [Y/N]: ")
+
+    if p == "Y" || p == "y" {
+        C = club.InitialData
+    }
 
     for {
         utils.ClearScreen()
@@ -24,7 +27,18 @@ func main() {
         if p == "1" {
             club.Menu(&C)
         } else if p == "2" {
-            matches.Menu(&P, &C)
+            if C.N < utils.CLUBMAX {
+                fmt.Printf(
+                    "Data klub bola masih kurang! (kurang %d lagi)\n",
+                    utils.CLUBMAX - C.N,
+                )
+
+                fmt.Print(utils.WaitForEnterPrompt)
+                utils.WaitForEnter()
+            } else {
+                matches.InisialisasiData(&P, C)
+                matches.Menu(&P, &C)
+            }
         } else if p == "3" {
             break
         } else {

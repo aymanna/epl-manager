@@ -26,72 +26,66 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
     for {
         utils.ClearScreen()
         PrintPrompt()
-        fmt.Print("Pilih [1/2/3/4]: ")
+        fmt.Print("Pilih [1/2/3/4/5]: ")
         fmt.Scan(&p1)
+        p2 = ""
 
-        if p1 == "1" {          // ubah
+        if p1 == "1" {          // input
             for p2 != "n" && p2 != "N" {
-                fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
-                fmt.Scan(&week)
+                fmt.Print("Masukkan nama club (home): ")
+                fmt.Scan(&nama1)
+                fmt.Print("Masukkan nama club (away): ")
+                fmt.Scan(&nama2)
 
-                if week >= 1 && week <= WEEKMAX {
-                    Cetak(*P, week)
-                    fmt.Println()
-
-                    fmt.Print("Masukkan nomor pertandingan: ")
-                    fmt.Scan(&order)
-
-                    if order < 1 && order > PERTANDINGANMAX {
-                        fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                if club.CariKlub(*C, nama1) == -1 || club.CariKlub(*C, nama2) == -1 {
+                    fmt.Println("Klub bola tidak dapat ditemukan.")
+                } else {
+                    if nama1 == nama2 {
+                        fmt.Println("Club bola home dan away harus berbeda.")
                     } else {
-                        fmt.Print("Masukkan banyak gol (home): ")
-                        fmt.Scan(&gol1)
-                        fmt.Print("Masukkan banyak gol (away): ")
-                        fmt.Scan(&gol2)
+                        week, order = CariPertandingan(*P, nama1, nama2)
 
-                        if gol1 < 0 || gol2 < 0 {
-                            fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                        if P[week][order].SudahMain {
+                            fmt.Println("Pertandingan sudah pernah dilakukan.")
                         } else {
-                            Ubah(P, C, week, order, gol1, gol2)
+                            fmt.Print("Masukkan banyak gol (home): ")
+                            fmt.Scan(&gol1)
+                            fmt.Print("Masukkan banyak gol (away): ")
+                            fmt.Scan(&gol2)
+        
+                            if gol1 < 0 || gol2 < 0 {
+                                fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                            } else {
+                                Ubah(P, C, nama1, nama2, gol1, gol2)
+                            }
                         }
                     }
-                } else {
-                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
                 }
 
-                utils.ValidateRepeat(&p2, "Ubah data pertandingan lagi? [Y/N]: ")
+                utils.ValidateRepeat(&p2, "Input data pertandingan lagi? [Y/N]: ")
             }
         } else if p1 == "2" {   // hapus
             for p2 != "n" && p2 != "N" {
-                fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
-                fmt.Scan(&week)
+                fmt.Print("Masukkan nama club (home): ")
+                fmt.Scan(&nama1)
+                fmt.Print("Masukkan nama club (away): ")
+                fmt.Scan(&nama2)
 
-                if week > 0 && week < WEEKMAX {
-                    Cetak(*P, week)
-                    fmt.Println()
-
-                    fmt.Print("Masukkan nomor pertandingan: ")
-                    fmt.Scan(&order)
-
-                    if order < 1 && order > PERTANDINGANMAX {
-                        fmt.Println("Masukkan minggu pertandingan tidak valid.")
-                    } else {
-                        Hapus(P, C, week, order)
-                    }
+                if club.CariKlub(*C, nama1) == -1 || club.CariKlub(*C, nama2) == -1 {
+                    fmt.Println("Klub bola tidak dapat ditemukan.")
                 } else {
-                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                    if nama1 == nama2 {
+                        fmt.Println("Club bola home dan away harus berbeda.")
+                    } else {
+                        Hapus(P, C, nama1, nama2)
+                    }
                 }
 
                 utils.ValidateRepeat(&p2, "Hapus data pertandingan lagi? [Y/N]: ")
             }
         } else if p1 == "3" {   // cari
             for p2 != "n" && p2 != "N" {
-                fmt.Println("Club bola:")
-
-                for i := 0; i < C.N; i++ {
-                    fmt.Println(C.Get[i].Nama)
-                }
-
+                club.CetakKlub(*C)
                 fmt.Print("Masukkan nama club bola (home): ")
                 fmt.Scan(&nama1)
 
@@ -104,29 +98,39 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                     if club.CariKlub(*C, nama2) == -1 {
                         fmt.Println("Club bola tidak dapat ditemukan.")
                     } else {
-                        week, order = CariPertandingan(P, nama1, nama2)
-                        fmt.Printf(
-                            "Pertandingan %s (home) dengan %s (away) akan berlangsung pada:\n",
-                            nama1,
-                            nama2,
-                        )
-                        fmt.Printf("minggu ke-%d urutan %d.\n",
-                            week,
-                            order,
-                        )
+                        if nama1 == nama2 {
+                            fmt.Println("Club bola home dan away harus berbeda.")
+                        } else {
+                            week, order = CariPertandingan(*P, nama1, nama2)
+                            fmt.Printf(
+                                "Pertandingan %s (home) dengan %s (away) akan berlangsung pada:\n",
+                                nama1,
+                                nama2,
+                            )
+                            fmt.Printf("Minggu ke-%d dengan urutan pertandingan ke-%d.\n",
+                                week + 1,
+                                order + 1,
+                            )
+                        }
                     }
                 }
 
                 utils.ValidateRepeat(&p2, "Ubah data pertandingan lagi? [Y/N]: ")
             }
         } else if p1 == "4" {   // tampil
-            fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
-            fmt.Scan(&week)
+            utils.ValidateRepeat(&p2, "Tampil Semuanya? [Y/N]: ")
 
-            if week >= 1 && week <= WEEKMAX {
-                Cetak(*P, week)
+            if p2 == "Y" || p2 == "y" {
+                Cetak(*P)
             } else {
-                fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
+                fmt.Scan(&week)
+    
+                if week >= 1 && week <= WEEKMAX {
+                    CetakWeek(*P, week)
+                } else {
+                    fmt.Println("Masukkan minggu pertandingan tidak valid.")
+                }
             }
 
             fmt.Print(utils.WaitForEnterPrompt)
@@ -148,7 +152,7 @@ func PrintPrompt() {
     fmt.Println(" 1. Input Data Pertandingan      ")
     fmt.Println(" 2. Hapus Data Pertandingan      ")
     fmt.Println(" 3. Cari Data Pertandingan       ")
-    fmt.Println(" 3. Tampil Data Pertandingan     ")
-    fmt.Println(" 4. Kembali ke Menu Utama        ")
+    fmt.Println(" 4. Tampil Data Pertandingan     ")
+    fmt.Println(" 5. Kembali ke Menu Utama        ")
     fmt.Println("---------------------------------")
 }

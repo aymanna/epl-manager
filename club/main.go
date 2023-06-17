@@ -50,14 +50,45 @@ var InitialData = TabKlub{
 
 func Menu(A *TabKlub) {
     var p1, p2, nama, namaBaru string
+    var A_tmp TabKlub
 
     for {
         utils.ClearScreen()
         PrintPrompt()
-        fmt.Print("Piiih [1/2/3]: ")
+        fmt.Print("Piiih [1/2/3/4]: ")
         fmt.Scan(&p1)
+        p2 = ""
 
-        if p1 == "1" {   // ubah
+        if p1 == "1" {          // input
+            if A.N >= utils.CLUBMAX {
+                fmt.Println("Data club bola sudah penuh.")
+                fmt.Print(utils.WaitForEnterPrompt)
+                utils.WaitForEnter()
+
+                p2 = "N"
+            }
+
+            for p2 != "n" && p2 != "N" {
+                fmt.Print("Masukkan nama club bola yang ingin di masukkan (3 alfabetikal caps): ")
+                fmt.Scan(&nama)
+
+                if CariKlub(*A, nama) != -1 {
+                    fmt.Println("Nama club bola sudah ada.")
+                } else {
+                    if len(nama) != 3 {
+                        fmt.Println("panjang nama bola tidak sesuai (harus 3 huruf).")
+                    } else {
+                        if !utils.ValidClubName(nama) {
+                            fmt.Println("Nama klub tidak valid (diperlukan semua caps dan alfabetikal).")
+                        } else {
+                            Input(A, nama)
+                        }
+                    }
+                }
+
+                utils.ValidateRepeat(&p2, "Input data klub bola lagi? [Y/N]: ")
+            }
+        } else if p1 == "2" {   // ubah
             if A.N == 0 {
                 p2 = "n"
 
@@ -65,7 +96,7 @@ func Menu(A *TabKlub) {
                 fmt.Print(utils.WaitForEnterPrompt)
                 utils.WaitForEnter()
             } else {
-                Cetak(*A)
+                CetakKlub(*A)
             }
 
             for p2 != "n" && p2 != "N" {
@@ -83,8 +114,12 @@ func Menu(A *TabKlub) {
                             fmt.Println("Nama klub bola sudah ada.")
                         }
 
-                        Ubah(A, nama, namaBaru)
-                        // TODO: configure rename for the array of TabPertandingan
+                        if !utils.ValidClubName(namaBaru) {
+                            fmt.Println("Nama klub tidak valid (diperlukan semua caps dan alfabetikal).")
+                        } else {
+                            Ubah(A, nama, namaBaru)
+                            // TODO: configure rename for the array of TabPertandingan
+                        }
                     } else {
                         fmt.Println("panjang nama bola tidak sesuai (harus 3 huruf).")
                     }
@@ -92,18 +127,38 @@ func Menu(A *TabKlub) {
 
                 utils.ValidateRepeat(&p2, "Ubah data klub bola lagi? [Y/N]: ")
             }
-        } else if p1 == "2" {   // tampil
+        } else if p1 == "3" {   // hapus
+            if !(A.N > 0) {
+                fmt.Println("Data club bola masih kosong!")
+                p2 = "N"
+            }
+
+            for p2 != "n" && p2 != "N" {
+                CetakKlub(*A)
+
+                fmt.Print("Masukkan nama club bola yang ingin dihapus: ")
+                fmt.Scan(&nama)
+
+                if CariKlub(*A, nama) == -1 {
+                    fmt.Println("Nama club bola tidak dapat ditemukan.")
+                } else {
+                    Hapus(A, nama)
+                }
+
+                utils.ValidateRepeat(&p2, "Hapus data klub bola lagi? [Y/N]: ")
+            }
+        } else if p1 == "4" {   // tampil
             if A.N > 0 {
-                // UpdateRanking() ???
-                Sort(A)
-                Cetak(*A)
+                A_tmp = *A
+                Sort(&A_tmp)
+                CetakRanking(A_tmp)
             } else {
                 fmt.Println("Data club bola kosong!")
             }
 
             fmt.Print(utils.WaitForEnterPrompt)
             utils.WaitForEnter()
-        } else if p1 == "3" {   // exit
+        } else if p1 == "5" {   // exit
             break
         } else {
             fmt.Println(utils.WrongInputPrompt)
@@ -117,8 +172,10 @@ func PrintPrompt() {
     fmt.Println("=================================")
     fmt.Println("       K L U B     B O L A       ")
     fmt.Println("---------------------------------")
-    fmt.Println(" 1. Ubah Data Klub Bola          ")
-    fmt.Println(" 2. Tampil Ranking Klub Bola     ")
-    fmt.Println(" 3. Kembali ke Menu Utama        ")
+    fmt.Println(" 1. Input Data Klub Bola         ")
+    fmt.Println(" 2. Ubah Data Klub Bola          ")
+    fmt.Println(" 3. Hapus Data Klub Bola         ")
+    fmt.Println(" 4. Tampil Ranking Klub Bola     ")
+    fmt.Println(" 5. Kembali ke Menu Utama        ")
     fmt.Println("---------------------------------")
 }

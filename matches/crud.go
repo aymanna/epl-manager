@@ -14,7 +14,45 @@ var Header = []string{
     "SUDAH MAIN",
 }
 
-func Cetak(P TabPertandingan, week int) {
+func Cetak(P TabPertandingan) {
+    var i, j int
+    var separator string
+
+    separator += "+------+"
+
+    for i = 0; i < PERTANDINGANMAX; i++ {
+        separator += "---------+"
+    }
+
+    fmt.Println(separator)
+    fmt.Print("| WEEK ")
+
+    for i = 0; i < PERTANDINGANMAX; i++ {
+        fmt.Printf("| % 7s ", fmt.Sprintf("P-%d", i+1))
+    }
+
+    fmt.Println("|")
+    fmt.Println(separator)
+
+    for i = 0; i < WEEKMAX; i++ {
+        fmt.Printf("| % 4s ", utils.ToStr(i+1))
+        for j = 0; j < PERTANDINGANMAX; j++ {
+            fmt.Printf(
+                "| % 7s ",
+                fmt.Sprintf(
+                    "%s-%s",
+                    P[i][j].Nama1,
+                    P[i][j].Nama2,
+                ),
+            )
+        }
+        fmt.Println("|")
+    }
+
+    fmt.Println(separator)
+}
+
+func CetakWeek(P TabPertandingan, week int) {
     var separator, havePlayed string
     var i, j int
 
@@ -62,10 +100,12 @@ func Cetak(P TabPertandingan, week int) {
     fmt.Println(separator)
 }
 
-func Ubah(P *TabPertandingan, C *club.TabKlub, week, order, gol1, gol2 int) {
-    P[week-1][order-1].Gol1 = gol1
-    P[week-1][order-1].Gol2 = gol2
-    P[week-1][order-1].SudahMain = true
+func Ubah(P *TabPertandingan, C *club.TabKlub, nama1, nama2 string, gol1, gol2 int) {
+    week, order := CariPertandingan(*P, nama1, nama2)
+
+    P[week][order].Gol1 = gol1
+    P[week][order].Gol2 = gol2
+    P[week][order].SudahMain = true
     UpdateRanking(C, *P)
 }
 
@@ -88,18 +128,18 @@ func InisialisasiData(P *TabPertandingan, C club.TabKlub) {
         for j := 0; j < PERTANDINGANMAX; j++ {
             P[i][j].Nama1 = C.Get[r[j][0]].Nama
             P[i][j].Nama2 = C.Get[r[j][1]].Nama
-            P[i][j].Gol1 = 0
-            P[i][j].Gol2 = 0
-            P[i][j].SudahMain = false
+            // P[i][j].Gol1 = 0
+            // P[i][j].Gol2 = 0
+            // P[i][j].SudahMain = false
         }
     }
 }
 
-func CariPertandingan(P *TabPertandingan, nama1, nama2 string) (int, int) {
+func CariPertandingan(P TabPertandingan, nama1, nama2 string) (int, int) {
     for i := 0; i < WEEKMAX; i++ {
         for j := 0; j < PERTANDINGANMAX; j++ {
             if P[i][j].Nama1 == nama1 && P[i][j].Nama2 == nama2 {
-                return i + 1, j + 1
+                return i, j
             }
         }
     }
@@ -107,10 +147,11 @@ func CariPertandingan(P *TabPertandingan, nama1, nama2 string) (int, int) {
     return -1, -1
 }
 
-func Hapus(P *TabPertandingan, C *club.TabKlub, week, order int) {
-    P[week-1][order-1].Gol1 = 0
-    P[week-1][order-1].Gol2 = 0
-    P[week-1][order-1].SudahMain = false
+func Hapus(P *TabPertandingan, C *club.TabKlub, nama1, nama2 string) {
+    week, order := CariPertandingan(*P, nama1, nama2)
+    P[week][order].Gol1 = 0
+    P[week][order].Gol2 = 0
+    P[week][order].SudahMain = false
     UpdateRanking(C, *P)
 }
 

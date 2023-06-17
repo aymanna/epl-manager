@@ -18,7 +18,7 @@ var Header = []string{
     "POIN",
 }
 
-func Cetak(A TabKlub) {
+func CetakRanking(A TabKlub) {
     var i, j int
     var separator string
 
@@ -61,6 +61,25 @@ func Cetak(A TabKlub) {
     }
 
     fmt.Println(separator)
+}
+
+func CetakKlub(A TabKlub) {
+    fmt.Println("+------+")
+    fmt.Println("| NAMA |")
+    fmt.Println("+------+")
+
+    for i := 0; i < A.N; i++ {
+        fmt.Printf("| % 4s |\n", A.Get[i].Nama)
+    }
+
+    fmt.Println("+------+")
+}
+
+func Input(A *TabKlub, nama string) {
+    a := Klub{}
+    a.Nama = nama
+    A.Get[A.N] = a
+    A.N++
 }
 
 func Ubah(A *TabKlub, namaLama, namaBaru string) {
