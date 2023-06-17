@@ -118,7 +118,6 @@ func Menu(A *TabKlub) {
                             fmt.Println("Nama klub tidak valid (diperlukan semua caps dan alfabetikal).")
                         } else {
                             Ubah(A, nama, namaBaru)
-                            // TODO: configure rename for the array of TabPertandingan
                         }
                     } else {
                         fmt.Println("panjang nama bola tidak sesuai (harus 3 huruf).")

@@ -34,13 +34,13 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
             for p2 != "n" && p2 != "N" {
                 fmt.Print("Masukkan nama club (home): ")
                 fmt.Scan(&nama1)
-                
+
                 if club.CariKlub(*C, nama1) == -1 {
                     fmt.Println("Klub bola tidak dapat ditemukan.")
                 } else {
                     fmt.Print("Masukkan nama club (away): ")
                     fmt.Scan(&nama2)
-    
+
                     if club.CariKlub(*C, nama2) == -1 {
                         fmt.Println("Klub bola tidak dapat ditemukan.")
                     } else {
@@ -48,7 +48,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                             fmt.Println("Club bola home dan away harus berbeda.")
                         } else {
                             week, order = CariPertandingan(*P, nama1, nama2)
-    
+
                             if P[week][order].SudahMain {
                                 fmt.Println("Pertandingan sudah pernah dilakukan.")
                             } else {
@@ -56,7 +56,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                                 fmt.Scan(&gol1)
                                 fmt.Print("Masukkan banyak gol (away): ")
                                 fmt.Scan(&gol2)
-            
+
                                 if gol1 < 0 || gol2 < 0 {
                                     fmt.Println("Banyak gol tidak dapat bernilai negatif.")
                                 } else {
@@ -133,7 +133,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
             } else {
                 fmt.Printf("Masukkan minggu pertandingan (1-%d): ", WEEKMAX)
                 fmt.Scan(&week)
-    
+
                 if week >= 1 && week <= WEEKMAX {
                     CetakWeek(*P, week-1)
                 } else {
