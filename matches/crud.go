@@ -79,7 +79,7 @@ func CetakWeek(P TabPertandingan, week int) {
 
     // print contents
     for i = 0; i < PERTANDINGANMAX; i++ {
-        p := P[week-1][i]
+        p := P[week][i]
 
         if p.SudahMain {
             havePlayed = "SUDAH"
@@ -158,8 +158,6 @@ func Hapus(P *TabPertandingan, C *club.TabKlub, nama1, nama2 string) {
 func UpdateRanking(C *club.TabKlub, P TabPertandingan) {
     var i, j, idx1, idx2 int
     var p Pertandingan
-
-    *C = club.InitialData
 
     for i = 0; i < WEEKMAX; i++ {
         for j = 0; j < PERTANDINGANMAX; j++ {

@@ -135,7 +135,7 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
                 fmt.Scan(&week)
     
                 if week >= 1 && week <= WEEKMAX {
-                    CetakWeek(*P, week)
+                    CetakWeek(*P, week-1)
                 } else {
                     fmt.Println("Masukkan minggu pertandingan tidak valid.")
                 }
