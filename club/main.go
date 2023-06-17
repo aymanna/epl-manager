@@ -55,7 +55,7 @@ func Menu(A *TabKlub) {
     for {
         utils.ClearScreen()
         PrintPrompt()
-        fmt.Print("Piiih [1/2/3/4]: ")
+        fmt.Print("Piiih [1/2/3/4/5]: ")
         fmt.Scan(&p1)
         p2 = ""
 
