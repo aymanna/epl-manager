@@ -8,19 +8,19 @@ import (
 var Header = []string{
     "NO",
     "NAMA",
-    "PERTANDINGAN",
-    "KEMENANGAN",
-    "SERI",
-    "KEKALAHAN",
-    "GOL MEMASUKKAN",
-    "GOL KEMASUKKAN",
-    "SELISIH GOL",
-    "POIN",
+    "MP",
+    "Wins",
+    "Draw",
+    "Loss",
+    "GFs",
+    "GAs",
+    "GDs",
+    "Pts",
 }
 
 func CetakRanking(A TabKlub) {
     var i, j int
-    var separator string
+    var separator, fStr string
 
     separator = "+"
 
@@ -32,6 +32,13 @@ func CetakRanking(A TabKlub) {
 
         separator += "+"
     }
+
+    // generate formatted string
+    for i = 0; i < len(Header); i++ {
+        fStr += fmt.Sprintf("| %% %ds ", len(Header[i]))
+    }
+
+    fStr += "|\n"
 
     fmt.Println(separator)
 
@@ -46,17 +53,17 @@ func CetakRanking(A TabKlub) {
     // print contents
     for i = 0; i < A.N; i++ {
         fmt.Printf(
-            "| % 2s | % 4s | % 12d | % 10d | % 4d | % 9d | % 14d | % 14d | % 11d | % 4d |\n",
+            fStr,
             utils.ToStr(i+1),
             A.Get[i].Nama,
-            A.Get[i].Pertandingan,
-            A.Get[i].Menang,
-            A.Get[i].Seri,
-            A.Get[i].Kalah,
-            A.Get[i].Memasukkan,
-            A.Get[i].Kemasukkan,
-            A.Get[i].Selisih,
-            A.Get[i].Poin,
+            utils.ToStr(A.Get[i].Pertandingan),
+            utils.ToStr(A.Get[i].Menang),
+            utils.ToStr(A.Get[i].Seri),
+            utils.ToStr(A.Get[i].Kalah),
+            utils.ToStr(A.Get[i].Memasukkan),
+            utils.ToStr(A.Get[i].Kemasukkan),
+            utils.ToStr(A.Get[i].Selisih),
+            utils.ToStr(A.Get[i].Poin),
         )
     }
 
