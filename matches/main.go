@@ -34,29 +34,34 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
             for p2 != "n" && p2 != "N" {
                 fmt.Print("Masukkan nama club (home): ")
                 fmt.Scan(&nama1)
-                fmt.Print("Masukkan nama club (away): ")
-                fmt.Scan(&nama2)
-
-                if club.CariKlub(*C, nama1) == -1 || club.CariKlub(*C, nama2) == -1 {
+                
+                if club.CariKlub(*C, nama1) == -1 {
                     fmt.Println("Klub bola tidak dapat ditemukan.")
                 } else {
-                    if nama1 == nama2 {
-                        fmt.Println("Club bola home dan away harus berbeda.")
+                    fmt.Print("Masukkan nama club (away): ")
+                    fmt.Scan(&nama2)
+    
+                    if club.CariKlub(*C, nama2) == -1 {
+                        fmt.Println("Klub bola tidak dapat ditemukan.")
                     } else {
-                        week, order = CariPertandingan(*P, nama1, nama2)
-
-                        if P[week][order].SudahMain {
-                            fmt.Println("Pertandingan sudah pernah dilakukan.")
+                        if nama1 == nama2 {
+                            fmt.Println("Club bola home dan away harus berbeda.")
                         } else {
-                            fmt.Print("Masukkan banyak gol (home): ")
-                            fmt.Scan(&gol1)
-                            fmt.Print("Masukkan banyak gol (away): ")
-                            fmt.Scan(&gol2)
-        
-                            if gol1 < 0 || gol2 < 0 {
-                                fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                            week, order = CariPertandingan(*P, nama1, nama2)
+    
+                            if P[week][order].SudahMain {
+                                fmt.Println("Pertandingan sudah pernah dilakukan.")
                             } else {
-                                Ubah(P, C, nama1, nama2, gol1, gol2)
+                                fmt.Print("Masukkan banyak gol (home): ")
+                                fmt.Scan(&gol1)
+                                fmt.Print("Masukkan banyak gol (away): ")
+                                fmt.Scan(&gol2)
+            
+                                if gol1 < 0 || gol2 < 0 {
+                                    fmt.Println("Banyak gol tidak dapat bernilai negatif.")
+                                } else {
+                                    Ubah(P, C, nama1, nama2, gol1, gol2)
+                                }
                             }
                         }
                     }
@@ -68,16 +73,21 @@ func Menu(P *TabPertandingan, C *club.TabKlub) {
             for p2 != "n" && p2 != "N" {
                 fmt.Print("Masukkan nama club (home): ")
                 fmt.Scan(&nama1)
-                fmt.Print("Masukkan nama club (away): ")
-                fmt.Scan(&nama2)
 
-                if club.CariKlub(*C, nama1) == -1 || club.CariKlub(*C, nama2) == -1 {
+                if club.CariKlub(*C, nama1) == -1 {
                     fmt.Println("Klub bola tidak dapat ditemukan.")
                 } else {
-                    if nama1 == nama2 {
-                        fmt.Println("Club bola home dan away harus berbeda.")
+                    fmt.Print("Masukkan nama club (away): ")
+                    fmt.Scan(&nama2)
+    
+                    if club.CariKlub(*C, nama2) == -1 {
+                        fmt.Println("Klub bola tidak dapat ditemukan.")
                     } else {
-                        Hapus(P, C, nama1, nama2)
+                        if nama1 == nama2 {
+                            fmt.Println("Club bola home dan away harus berbeda.")
+                        } else {
+                            Hapus(P, C, nama1, nama2)
+                        }
                     }
                 }
 
