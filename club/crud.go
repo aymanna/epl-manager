@@ -162,6 +162,31 @@ func CariKlub(A TabKlub, nama string) int {
     return -1
 }
 
+func CariPoint(A TabKlub, poin int) int {
+    var A_tmp TabKlub
+    var left, right, mid int
+
+    SelectionSort(&A_tmp)
+
+    left = 0
+    right = A_tmp.N - 1
+    mid = (left + right) / 2
+
+    for left <= right {
+        if A_tmp.Get[mid].Poin < poin {
+            left = mid + 1
+        } else if A_tmp.Get[mid].Poin > poin {
+            right = mid - 1
+        } else {
+            return mid
+        }
+
+        mid = (left + right) / 2
+    }
+
+    return mid
+}
+
 func Drop(A *TabKlub) {
     for i := 0; i < A.N; i++ {
         A.Get[i].Pertandingan = 0

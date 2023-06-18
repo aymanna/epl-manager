@@ -51,11 +51,12 @@ var DummyData = TabKlub{
 func Menu(A *TabKlub) {
     var p1, p2, nama, namaBaru string
     var A_tmp TabKlub
+    var poin, idx int
 
     for {
         utils.ClearScreen()
         PrintPrompt()
-        fmt.Print("Piiih [1/2/3/4/5]: ")
+        fmt.Print("Piiih [1/2/3/4/5/6]: ")
         fmt.Scan(&p1)
         p2 = ""
 
@@ -146,7 +147,26 @@ func Menu(A *TabKlub) {
 
                 utils.ValidateRepeat(&p2, "Hapus data klub bola lagi? [Y/N]: ")
             }
-        } else if p1 == "4" {   // tampil
+        } else if p1 == "4" {   // cari 
+            for p2 != "n" && p2 != "N" {
+                fmt.Print("Masukkan poin terdekat yang akan dicari: ")
+                fmt.Scan(&poin)
+                
+                if poin < 0 {
+                    fmt.Println("Poin tidak dapat bernilai negatif.")
+                } else {
+                    idx = CariPoint(*A, poin)
+    
+                    fmt.Printf(
+                        "Club bola dengan poin terdekat dengan poin %d adalah: %s\n",
+                        poin,
+                        A.Get[idx].Nama,
+                    )
+                }
+
+                utils.ValidateRepeat(&p2, "Cari poin club bola lagi? [Y/N]: ")
+            }
+        } else if p1 == "5" {   // tampil
             if A.N > 0 {
                 A_tmp = *A
                 utils.ValidateRepeat(&p2, "Data terurut secara descending (menurun)? [Y/N]: ")
@@ -164,7 +184,7 @@ func Menu(A *TabKlub) {
 
             fmt.Print(utils.WaitForEnterPrompt)
             utils.WaitForEnter()
-        } else if p1 == "5" {   // exit
+        } else if p1 == "6" {   // exit
             break
         } else {
             fmt.Println(utils.WrongInputPrompt)
@@ -181,7 +201,8 @@ func PrintPrompt() {
     fmt.Println(" 1. Input Data Klub Bola         ")
     fmt.Println(" 2. Ubah Data Klub Bola          ")
     fmt.Println(" 3. Hapus Data Klub Bola         ")
-    fmt.Println(" 4. Tampil Ranking Klub Bola     ")
-    fmt.Println(" 5. Kembali ke Menu Utama        ")
+    fmt.Println(" 4. Cari Poin Terdekat Klub Bola ")
+    fmt.Println(" 5. Tampil Ranking Klub Bola     ")
+    fmt.Println(" 6. Kembali ke Menu Utama        ")
     fmt.Println("---------------------------------")
 }
