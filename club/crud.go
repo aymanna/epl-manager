@@ -102,35 +102,47 @@ func Hapus(A *TabKlub, nama string) {
     A.N--
 }
 
-func InsertionSort(A *TabKlub, descending bool) {
+// Sorting the clubs descending
+func InsertionSort(A *TabKlub) {
     var i, j int
     var b1, b2 bool
 
     for i = 1; i < A.N; i++ {
         j = i
 
-        if descending {
-            b1 = A.Get[j].Poin > A.Get[j-1].Poin
-            b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
-        } else {
-            b1 = A.Get[j].Poin < A.Get[j-1].Poin
-            b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih < A.Get[j-1].Selisih)
-        }
+        b1 = A.Get[j].Poin > A.Get[j-1].Poin
+        b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
 
         for j > 0 && (b1 || b2) {
             SwapKlub(&A.Get[j], &A.Get[j-1])
             j--
 
             if j != 0 {
-                if descending {
-                    b1 = A.Get[j].Poin > A.Get[j-1].Poin
-                    b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
-                } else {
-                    b1 = A.Get[j].Poin < A.Get[j-1].Poin
-                    b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih < A.Get[j-1].Selisih)
-                }
+                b1 = A.Get[j].Poin > A.Get[j-1].Poin
+                b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
             }
         }
+    }
+}
+
+// Sorting the clubs ascending
+func SelectionSort(A *TabKlub) {
+    var i, j, idx int
+    var b1, b2 bool
+
+    for i = 0; i < A.N-1; i++ {
+        idx = i
+
+        for j = i+1; j < A.N; j++ {
+            b1 = A.Get[j].Poin < A.Get[idx].Poin
+            b2 = (A.Get[j].Poin == A.Get[idx].Poin) && (A.Get[j].Selisih < A.Get[idx].Selisih)
+
+            if b1 || b2 {
+                idx = j
+            }
+        }
+
+        A.Get[idx], A.Get[i] = A.Get[i], A.Get[idx]
     }
 }
 
