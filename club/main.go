@@ -22,7 +22,7 @@ type TabKlub struct {
     N   int
 }
 
-var InitialData = TabKlub{
+var DummyData = TabKlub{
     [utils.CLUBMAX]Klub {
         {"MCI",0,0,0,0,0,0,0,0},
         {"ARS",0,0,0,0,0,0,0,0},

@@ -15,7 +15,7 @@ func main() {
     utils.ValidateRepeat(&p, "Ingin menggunakan nama-nama club tersedia? [Y/N]: ")
 
     if p == "Y" || p == "y" {
-        C = club.InitialData
+        C = club.DummyData
     }
 
     for {
