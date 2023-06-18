@@ -169,8 +169,8 @@ func UpdateRanking(C *club.TabKlub, P TabPertandingan) {
                 idx1 = club.CariKlub(*C, p.Nama1)
                 idx2 = club.CariKlub(*C, p.Nama2)
 
-                C.Get[idx1].Pertandingan++
-                C.Get[idx2].Pertandingan++
+                // C.Get[idx1].Pertandingan++
+                // C.Get[idx2].Pertandingan++
 
                 if p.Gol1 > p.Gol2 {
                     C.Get[idx1].Menang++
@@ -192,9 +192,9 @@ func UpdateRanking(C *club.TabKlub, P TabPertandingan) {
         }
     }
 
-    C.Get[idx1].Selisih = C.Get[idx1].Memasukkan - C.Get[idx1].Kemasukkan
-    C.Get[idx2].Selisih = C.Get[idx2].Memasukkan - C.Get[idx2].Kemasukkan
-
-    C.Get[idx1].Poin = C.Get[idx1].Menang * 3 + C.Get[idx1].Seri
-    C.Get[idx2].Poin = C.Get[idx2].Menang * 3 + C.Get[idx2].Seri
+    for i = 0; i < C.N; i++ {
+        C.Get[i].Pertandingan = C.Get[i].Menang + C.Get[i].Seri + C.Get[i].Kalah
+        C.Get[i].Selisih = C.Get[i].Memasukkan - C.Get[i].Kemasukkan
+        C.Get[i].Poin = C.Get[i].Menang * 3 + C.Get[i].Seri
+    }
 }
