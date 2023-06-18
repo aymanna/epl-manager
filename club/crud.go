@@ -102,7 +102,7 @@ func Hapus(A *TabKlub, nama string) {
     A.N--
 }
 
-func Sort(A *TabKlub, descending bool) {
+func InsertionSort(A *TabKlub, descending bool) {
     var i, j int
     var b1, b2 bool
 

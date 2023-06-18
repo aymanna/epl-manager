@@ -152,9 +152,9 @@ func Menu(A *TabKlub) {
                 utils.ValidateRepeat(&p2, "Data terurut secara descending (menurun)? [Y/N]: ")
 
                 if p2 == "Y" || p2 == "y" {
-                    Sort(&A_tmp, true)
+                    InsertionSort(&A_tmp, true)
                 } else {
-                    Sort(&A_tmp, false)
+                    InsertionSort(&A_tmp, false)
                 }
 
                 CetakRanking(A_tmp)
