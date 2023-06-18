@@ -102,22 +102,33 @@ func Hapus(A *TabKlub, nama string) {
     A.N--
 }
 
-func Sort(A *TabKlub) {
+func Sort(A *TabKlub, descending bool) {
     var i, j int
     var b1, b2 bool
 
     for i = 1; i < A.N; i++ {
         j = i
-        b1 = A.Get[j].Poin > A.Get[j-1].Poin
-        b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
+
+        if descending {
+            b1 = A.Get[j].Poin > A.Get[j-1].Poin
+            b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
+        } else {
+            b1 = A.Get[j].Poin < A.Get[j-1].Poin
+            b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih < A.Get[j-1].Selisih)
+        }
 
         for j > 0 && (b1 || b2) {
             SwapKlub(&A.Get[j], &A.Get[j-1])
             j--
 
             if j != 0 {
-                b1 = A.Get[j].Poin > A.Get[j-1].Poin
-                b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
+                if descending {
+                    b1 = A.Get[j].Poin > A.Get[j-1].Poin
+                    b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih > A.Get[j-1].Selisih)
+                } else {
+                    b1 = A.Get[j].Poin < A.Get[j-1].Poin
+                    b2 = (A.Get[j].Poin == A.Get[j-1].Poin) && (A.Get[j].Selisih < A.Get[j-1].Selisih)
+                }
             }
         }
     }

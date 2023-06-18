@@ -149,7 +149,14 @@ func Menu(A *TabKlub) {
         } else if p1 == "4" {   // tampil
             if A.N > 0 {
                 A_tmp = *A
-                Sort(&A_tmp)
+                utils.ValidateRepeat(&p2, "Data terurut secara descending (menurun)? [Y/N]: ")
+
+                if p2 == "Y" || p2 == "y" {
+                    Sort(&A_tmp, true)
+                } else {
+                    Sort(&A_tmp, false)
+                }
+
                 CetakRanking(A_tmp)
             } else {
                 fmt.Println("Data club bola kosong!")
