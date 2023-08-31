@@ -69,8 +69,8 @@ func DoubleRoundRobin(week int) [CLUBMAX/2][2]int {
 
 func ValidClubName(name string) bool {
     b1 := name[0] >= 'A' && name[0] <= 'Z'
-    b2 := name[1] >= 'A' && name[0] <= 'Z'
-    b3 := name[2] >= 'A' && name[0] <= 'Z'
+    b2 := name[1] >= 'A' && name[1] <= 'Z'
+    b3 := name[2] >= 'A' && name[2] <= 'Z'
 
     return b1 && b2 && b3
 }
